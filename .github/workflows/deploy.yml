@@ -28,4 +28,3 @@ jobs:
       - name: Set environment variables
         run: |
           echo "VERCEL_PROJECT_ID=${{ env.VERCEL_PROJECT_ID }}" >> $GITHUB_ENV
-          echo "VERCEL_ORG_ID=${{ env.VERCEL_ORG_ID }}" >> $GITHUB_ENV      
