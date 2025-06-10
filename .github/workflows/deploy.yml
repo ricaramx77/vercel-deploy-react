@@ -18,13 +18,14 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Vercel
-        run: |
-          npm install --global vercel
-          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-          vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
-
       - name: Set environment variables
         run: |
           echo "VERCEL_PROJECT_ID=${{ env.VERCEL_PROJECT_ID }}" >> $GITHUB_ENV
+
+      - name: Deploy to Vercel
+        run: |
+          npm install --global vercel          
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} --project-id=$VERCEL_PROJECT_ID
+          vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
