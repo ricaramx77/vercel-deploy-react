@@ -32,7 +32,7 @@ jobs:
           echo "VERCEL_PROJECT_ID está asignado correctamente ✅"
           fi
 
-      - name: Debug environment variables
+      - name: Debug environment variables 
         run: |
           if [ -z "$VERCEL_TOKEN" ]; then
           echo "VERCEL_TOKEN está vacío ❌"
