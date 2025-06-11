@@ -24,6 +24,7 @@ jobs:
           echo "VERCEL_PROJECT_ID está vacío ❌"
           else
           echo "VERCEL_PROJECT_ID está asignado correctamente ✅"
+          fi
 
       - name: Set environment variables
         run: |
