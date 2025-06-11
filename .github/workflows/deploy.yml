@@ -44,4 +44,11 @@ jobs:
           echo "El valor de VERCEL_PROJECT_ID es: $VERCEL_PROJECT_ID"
           echo "El valor de VERCEL_TOKEN es: $VERCEL_TOKEN"
 
+      - name: Deploy to Vercel
+        run: |
+          npm install --global vercel                    
+          vercel pull --yes --environment=production --token=$VERCEL_TOKEN --project-id=$VERCEL_PROJECT_ID
+          vercel build --prod --token=$VERCEL_TOKEN --project-id=$VERCEL_PROJECT_ID
+          vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN --project-id=$VERCEL_PROJECT_ID
+
 
