@@ -22,4 +22,9 @@ jobs:
         run: |
           echo "VERCEL_PROJECT_ID=${{ env.VERCEL_PROJECT_ID }}" >> $GITHUB_ENV
 
+      - name: Debug environment variables
+        run: |
+          echo "El valor de VERCEL_PROJECT_ID es: $VERCEL_PROJECT_ID"
+          echo "El valor de VERCEL_ORG_ID es: $VERCEL_ORG_ID"
+
 
