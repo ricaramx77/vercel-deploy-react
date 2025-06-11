@@ -18,6 +18,13 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Debug environment variables
+        run: |
+          if [ -z "$VERCEL_PROJECT_ID" ]; then
+          echo "VERCEL_PROJECT_ID está vacío ❌"
+          else
+          echo "VERCEL_PROJECT_ID está asignado correctamente ✅"
+
       - name: Set environment variables
         run: |
           echo "VERCEL_PROJECT_ID=${{ secrets.VERCEL_PROJECT_ID }}" >> $GITHUB_ENV
