@@ -21,7 +21,7 @@ jobs:
       - name: Set environment variables
         run: |
           echo "VERCEL_PROJECT_ID=${{ secrets.VERCEL_PROJECT_ID }}" >> $GITHUB_ENV
-          echo "VERCEL_TOKEN_ID=${{ secrets.VERCEL_TOKEN_ID }}" >> $GITHUB_ENV
+          echo "VERCEL_TOKEN_ID=${{ secrets.VERCEL_TOKEN }}" >> $GITHUB_ENV
 
       - name: Debug environment variables
         run: |
@@ -33,15 +33,15 @@ jobs:
 
       - name: Debug environment variables
         run: |
-          if [ -z "$VERCEL_TOKEN_ID" ]; then
-          echo "VERCEL_TOKEN_ID está vacío ❌"
+          if [ -z "$VERCEL_TOKEN" ]; then
+          echo "VERCEL_TOKEN está vacío ❌"
           else
-          echo "VERCEL_TOKEN_ID está asignado correctamente ✅"
+          echo "VERCEL_TOKEN está asignado correctamente ✅"
           fi
 
       - name: Debug environment variables
         run: |
           echo "El valor de VERCEL_PROJECT_ID es: $VERCEL_PROJECT_ID"
-          echo "El valor de VERCEL_TOKEN_ID es: $VERCEL_TOKEN_ID"
+          echo "El valor de VERCEL_TOKEN es: $VERCEL_TOKEN"
 
 
